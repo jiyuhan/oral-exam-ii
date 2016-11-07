@@ -7,8 +7,10 @@ import java.io.IOException;
 public class AmazonOrderProcessingTest {
     public static void main(String[] args) throws IOException{
         ReadOrders readOrders = new ReadOrders();
-        readOrders.loadFile();
-        readOrders.readFile();
-        readOrders.printFile();
+        boolean loadFileSuccessed = readOrders.loadFile();
+        if(loadFileSuccessed == true) {
+            readOrders.readFile();
+            readOrders.printFile();
+        }
     }
 }

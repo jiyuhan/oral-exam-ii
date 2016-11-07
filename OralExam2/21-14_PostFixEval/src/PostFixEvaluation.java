@@ -25,7 +25,7 @@ public class PostFixEvaluation {
             else if(postfixExpressionCharArray[i] == ' ') {
                 if(tempInt != 0) {
                     numberStack.push(tempInt);
-                    System.out.format("number pushed: %d%n", tempInt);
+                    System.out.format("\tnumber pushed: %d%n", tempInt);
                     tempInt = 0;
                 }
             }
@@ -35,13 +35,20 @@ public class PostFixEvaluation {
                 }
                 else {
                     tempInt = Character.getNumericValue(postfixExpressionCharArray[i]);
-                    System.out.format("number read: %d%n", tempInt);
+                    System.out.format("\tnumber read: %d%n", tempInt);
                 }
             }
             else {
-                result = calculate(numberStack.pop(), numberStack.pop(), postfixExpressionCharArray[i]);
+                System.out.format("operator %c encountered... %n", postfixExpressionCharArray[i]);
+                int operandA = numberStack.pop();
+                System.out.format("\tnumber popped: %d%n", operandA);
+                int operandB = numberStack.pop();
+                System.out.format("\tnumber popped: %d%n", operandB);
+                result = calculate(operandA, operandB, postfixExpressionCharArray[i]);
+                System.out.format("calculated result with %c: %d%n", postfixExpressionCharArray[i], result);
                 numberStack.push(result);
-                System.out.format("%d%n", result);
+
+                System.out.format("\tnumber pushed: %d%n", result);
             }
         }
 

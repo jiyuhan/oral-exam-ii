@@ -12,15 +12,19 @@ import java.util.Scanner;
 public class ReadOrders {
 
     private Order[] orders = new Order[30];
-    private Path orderCsvFileLocation = Paths.get("files/S24_AmazonOrderProcessing_OrdersFile.csv");
+    private Path orderCsvFileLocation = Paths.get("/home/thomas/Desktop/oral-exam-ii/OralExam2/S24_AmazonOrderProcessing/files/S24_AmazonOrderProcessing_OrdersFile.csv");
     private String cvsSplit = ",";
     private int counter = 0;
 
-    public void loadFile()  {
+    public boolean loadFile()  {
         System.out.println("Finding file at " + this.orderCsvFileLocation);
-        if(Files.exists(this.orderCsvFileLocation))
+        if(Files.exists(this.orderCsvFileLocation)) {
             System.out.println("File found...");
-        else System.out.println("File does not exist");
+            return true;
+        } else {
+            System.out.println("File does not exist");
+            return false;
+        }
     }
 
     public void readFile() throws IOException{
