@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="GameOfLife">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/OralExam2/S6_GameofLife/out/artifacts/GameOfLife/GameOfLife.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
